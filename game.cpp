@@ -1,5 +1,5 @@
 //Angelina Castillo
-//project 2
+//Game.cpp; Initializes players and turns
 #include "constants.hpp"
 #include "game.hpp"
 
@@ -22,7 +22,7 @@ Game::Game(const Game& p){
   dec_p1=p.dec_p1;
   dec_p2=p.dec_p2;
 }
-Game::~Game(){}
+Game::~Game()= default;
 
 Game& Game::operator = (const Game& p){
   trns = p.trns;
@@ -71,7 +71,7 @@ void Game::TurnReport(ostream& outs, int round_num) const {
     outs<<"Player 1 strategy: "<<player1->GetStrategy()<<endl;
     outs<<"Player 2 strategy: "<<player2->GetStrategy()<<endl;
   }
-  string decision_p1="";//empty string for decision
+  string decision_p1;//empty string for decision
   //decsion string added into decision_p1 or decision_p2
   if(dec_p1.at(round_num-1)==SILENT){
     decision_p1="silent";
@@ -83,7 +83,7 @@ void Game::TurnReport(ostream& outs, int round_num) const {
     decision_p1="unknown";
   } 
 
-  string decision_p2="";
+  string decision_p2;
   if(dec_p2.at(round_num-1)==SILENT){
     decision_p2="silent";
   }

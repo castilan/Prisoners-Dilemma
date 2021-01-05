@@ -1,13 +1,11 @@
-/* Sample test file for Project 3
-Angelina Castillo
-project 2
- */
+//Sample test file for Project 2
+//Angelina Castillo
+//project 2 - Prisoners Dilemma
+
 #include <iostream>
 #include "constants.hpp"
-#include "player.hpp"
 #include "game.hpp"
 
-// You may modify this file to include other header files
 using namespace std;
 
 int main() {
@@ -26,13 +24,11 @@ int main() {
 	}
 
 	// Loop over all combinations of player strategies and print game report
-	for (int p1_strategy=0; p1_strategy < NUM_STRATEGIES; p1_strategy++) {
+	for (const auto & possible_strategie : possible_strategies) {
 
-	    for (int p2_strategy=0; p2_strategy < NUM_STRATEGIES;
-			p2_strategy++) {
+	    for (const auto & p2_strategy : possible_strategies) {
 			cout << endl;
-			g.Reset(possible_strategies[p1_strategy],
-				possible_strategies[p2_strategy]);
+			g.Reset(possible_strategie, p2_strategy);
 
 			for (int i=1; i <= num_rounds; i++) {
 				g.PlayTurn();

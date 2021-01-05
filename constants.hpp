@@ -1,5 +1,5 @@
-//Angelina Castillo
-//project 2
+//CS215
+//project 2 - Constants including prison sentences based on different combinations and strategies.
 #ifndef CONSTS_HPP
 #define CONSTS_HPP
 
@@ -21,7 +21,7 @@ const float sentence_for_lone_snitch = 0;  // this is the snitch's sentence
 const int NUM_STRATEGIES = 4;
 const string possible_strategies[NUM_STRATEGIES] = {"ALWAYS_SNITCH", "ALWAYS_SILENT", "TIT_FOR_TAT", "SPECIAL"};
 //SPECIAL switches in between SNITCH and SILENT
-// Struct for players' decisions on a given turn - you don't have to use this
+// Struct for players' decisions on a given turn
 struct Turn {
        Decision p1_decision;
        Decision p2_decision;

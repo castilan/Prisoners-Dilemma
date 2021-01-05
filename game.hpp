@@ -10,35 +10,35 @@
 #include<vector>
 class Game {
 public:
-  //inittializes player1 and player2 as new players
 	Game();
-	// initialize player strategies
+    //initializes player1 and player2 as new players
+
 	Game(string p1_strategy, string p2_strategy);
-	Game(const Game& p);
+    // initialize player strategies
+
+    Game(const Game& p);
 	~Game();	
 	Game& operator = (const Game& p);
-
-	// Play another round -- record each player's decision
 	void PlayTurn();
+    // Play another round -- record each player's decision
 
-	// Print the results of an individual turn (see sample output)
 	void TurnReport(ostream& outs, int round_num) const;
+    // Print the results of an individual turn (see sample output)
 
-	// Reinitialize list of turns
 	void Reset();
+    // Reinitialize list of turns
 
-	// Reinitialize game and player strategies
 	void Reset(string p1_strategy, string p2_strategy);
+    // Reinitialize game and player strategies
 
-	// Print game report (see sample output)
-	// prints each player's strategy,
-	// calls the turn report for every turn, and the total sentences
 	friend ostream& operator << (ostream& outs, const Game& g);
-
+    // Print game report (see sample output)
+    // prints each player's strategy,
+    // calls the turn report for every turn, and the total sentences
 private:
   Player* player1;//pointing to player strategy
   Player* player2;//pointing to player strategy
-  //try a vector!
+
   std::vector <Decision> dec_p1;//vector holding player1 decisions
   std::vector <Decision> dec_p2;//vector holding player2 decisions
   std::vector <float> out_p1;//vector of player1 sentences
