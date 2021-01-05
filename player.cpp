@@ -18,7 +18,7 @@ Player::Player(const Player& p){
 }
 Player::~Player(){}
 
-Player& Player::operator = (const Player& p){
+Player& Player::operator =(const Player& p){
   strategy=p.GetStrategy();  
   return *this;
 }

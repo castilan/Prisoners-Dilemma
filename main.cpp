@@ -24,15 +24,14 @@ int main() {
 	}
 
 	// Loop over all combinations of player strategies and print game report
-	for (const auto & possible_strategie : possible_strategies) {
+	for (const auto & p1_strategy : possible_strategies) {
 
 	    for (const auto & p2_strategy : possible_strategies) {
 			cout << endl;
-			g.Reset(possible_strategie, p2_strategy);
+			g.Reset(p1_strategy, p2_strategy);
 
 			for (int i=1; i <= num_rounds; i++) {
 				g.PlayTurn();
-				g.TurnReport(cout, i);
 			}
 			cout << g;
 			cout << "Press ENTER to continue: ";

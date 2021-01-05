@@ -119,17 +119,17 @@ void Game::Reset(string p1_strategy, string p2_strategy){
 
 ostream& operator <<(ostream& outs, const Game& g){
   //loops through TurnReport for all rounds of g
-  for(int i=1;i==g.trns; i++){
+  for(int i=1;i<=g.trns; i++){
     g.TurnReport(outs, i);
   }
   //adds together for final sentences
   float p1_sum = 0;
-  for(int i = 0; i < g.out_p1.size(); i++){
-    p1_sum = p1_sum + g.out_p1.at(i);
+  for(float out_1 : g.out_p1){
+    p1_sum = p1_sum + out_1;
   }
   float p2_sum = 0;
-  for(int i = 0; i < g.out_p2.size(); i++){
-    p2_sum = p2_sum + g.out_p2.at(i);
+  for(float out_2 : g.out_p2){
+    p2_sum = p2_sum + out_2;
   }
   
   outs<<"*****************************************"<<endl;
