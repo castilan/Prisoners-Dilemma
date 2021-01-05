@@ -23,7 +23,7 @@ public:
     // Play another round -- record each player's decision
 
 	void TurnReport(ostream& outs, int round_num) const;
-    // Print the results of an individual turn (see sample output)
+    // Prints the results of an individual turn
 
 	void Reset();
     // Reinitialize list of turns
@@ -32,7 +32,7 @@ public:
     // Reinitialize game and player strategies
 
 	friend ostream& operator << (ostream& outs, const Game& g);
-    // Print game report (see sample output)
+    // Print game report
     // prints each player's strategy,
     // calls the turn report for every turn, and the total sentences
 private:
